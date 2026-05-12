@@ -1,7 +1,15 @@
 const express = require("express");
 const cors = require("cors");
-const app = express();
-app.use(cors());
+
+const app = express(); // 🔥 FALTABA ESTO
+
+const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.get("/health", (req, res) => {
   res.json({
