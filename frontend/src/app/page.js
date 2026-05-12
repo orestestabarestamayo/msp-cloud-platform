@@ -6,7 +6,7 @@ export default function Home() {
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
-    fetch("https://TU-BACKEND.onrender.com/health")
+    fetch("https://msp-cloud-platform.onrender.com/health")
       .then(res => res.json())
       .then(data => setStatus(data.status))
       .catch(() => setStatus("error"));
